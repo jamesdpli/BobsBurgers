@@ -6,7 +6,7 @@ import retrofit2.http.GET
 
 interface BobsBurgersService {
 
-    @GET("1")
+    @GET("7")
     suspend fun getCharacter(): Response<NetworkCharacter>
 
 }

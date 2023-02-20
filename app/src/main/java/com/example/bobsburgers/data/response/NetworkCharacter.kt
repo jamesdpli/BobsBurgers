@@ -1,4 +1,4 @@
-package com.example.bobsburgers.data
+package com.example.bobsburgers.data.response
 
 data class NetworkCharacter(
     val firstEpisode: String,

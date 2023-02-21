@@ -17,5 +17,5 @@ abstract class ViewModelModule {
     @Binds
     @IntoMap
     @ViewModelKey(CharacterDetailsViewModel::class)
-    internal abstract fun postListViewModel(viewModel: CharacterDetailsViewModel): ViewModel
+    internal abstract fun characterDetailsViewModel(viewModel: CharacterDetailsViewModel): ViewModel
 }

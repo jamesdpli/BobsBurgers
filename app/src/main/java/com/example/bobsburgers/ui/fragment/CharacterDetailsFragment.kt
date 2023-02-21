@@ -17,7 +17,7 @@ import javax.inject.Inject
 class CharacterDetailsFragment : Fragment() {
 
     @Inject lateinit var viewModelFactory: ViewModelFactory
-    private val viewModel by lazy {
+    private val characterDetailsViewModel by lazy {
         ViewModelProvider(this, viewModelFactory)[CharacterDetailsViewModel::class.java]
     }
 
@@ -27,8 +27,8 @@ class CharacterDetailsFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
 
-        viewModel.getCharacterById("9")
-        viewModel.characterDetailsLiveData.observe(viewLifecycleOwner) {
+        characterDetailsViewModel.getCharacterById("9")
+        characterDetailsViewModel.characterDetailsLiveData.observe(viewLifecycleOwner) {
             Log.d("Hello-Dagger", it.toString())
         }
 

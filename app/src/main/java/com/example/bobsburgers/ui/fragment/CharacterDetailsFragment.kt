@@ -1,4 +1,4 @@
-package com.example.bobsburgers.ui
+package com.example.bobsburgers.ui.fragment
 
 import android.content.Context
 import android.os.Bundle
@@ -9,7 +9,6 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.example.bobsburgers.R
 import com.example.bobsburgers.data.BobsBurgersRepository
-import com.example.bobsburgers.data.BobsBurgersService
 import dagger.android.support.AndroidSupportInjection
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers

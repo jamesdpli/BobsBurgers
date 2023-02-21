@@ -11,5 +11,4 @@ class BobsBurgersRepository @Inject constructor(
     suspend fun getCharacterById(id: String): Response<NetworkCharacter> {
         return service.getCharacter(id)
     }
-
 }

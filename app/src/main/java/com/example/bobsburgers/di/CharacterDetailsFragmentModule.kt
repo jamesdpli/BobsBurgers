@@ -1,6 +1,6 @@
 package com.example.bobsburgers.di
 
-import com.example.bobsburgers.ui.CharacterDetailsFragment
+import com.example.bobsburgers.ui.fragment.CharacterDetailsFragment
 import dagger.Module
 import dagger.android.ContributesAndroidInjector
 @Module

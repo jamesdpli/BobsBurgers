@@ -8,5 +8,4 @@ interface BobsBurgersService {
 
     @GET("7")
     suspend fun getCharacter(): Response<NetworkCharacter>
-
 }

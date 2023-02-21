@@ -21,4 +21,5 @@ class NetworkModule {
     fun provideBobsBurgersService(retrofit: Retrofit): BobsBurgersService{
         return retrofit.create(BobsBurgersService::class.java)
     }
+
 }

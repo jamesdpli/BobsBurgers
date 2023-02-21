@@ -8,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.example.bobsburgers.R
+import com.example.bobsburgers.data.BobsBurgersRepository
 import com.example.bobsburgers.data.BobsBurgersService
 import dagger.android.support.AndroidSupportInjection
 import kotlinx.coroutines.CoroutineScope
@@ -17,7 +18,7 @@ import javax.inject.Inject
 
 class CharacterDetailsFragment : Fragment() {
 
-    @Inject lateinit var service: BobsBurgersService
+    @Inject lateinit var repository: BobsBurgersRepository
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -26,7 +27,7 @@ class CharacterDetailsFragment : Fragment() {
     ): View? {
 
         CoroutineScope(Dispatchers.IO).launch {
-            Log.d("Network_Request", service.getCharacter().body().toString())
+            Log.d("Network_Request", repository.getCharacterById("7").body().toString())
         }
 
         return layoutInflater.inflate(R.layout.fragment_character_details, container, false)

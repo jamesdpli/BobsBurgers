@@ -3,7 +3,9 @@ package com.example.bobsburgers.di
 import com.example.bobsburgers.BobsBurgerApplication
 import dagger.Component
 import dagger.android.AndroidInjectionModule
+import javax.inject.Singleton
 
+@Singleton
 @Component(
     modules = [
         AndroidInjectionModule::class,

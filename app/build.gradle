@@ -55,6 +55,10 @@ dependencies {
     kapt "com.google.dagger:dagger-android-processor:$daggerVersion"
     kapt "com.google.dagger:dagger-compiler:$daggerVersion"
 
+    // ViewModelScope (Launch a coroutine in the ViewModelsScope)
+    def viewModelScopeVersion = "2.4.0"
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$viewModelScopeVersion"
+
     // Testing (Unit tests and Ui tests)
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.3'

@@ -9,7 +9,8 @@ import dagger.android.AndroidInjectionModule
         AndroidInjectionModule::class,
         BobsBurgerActivityModule::class,
         NetworkModule::class,
-        CharacterDetailsFragmentModule::class
+        CharacterDetailsFragmentModule::class,
+        ViewModelModule::class
     ]
 )
 interface AppComponent {

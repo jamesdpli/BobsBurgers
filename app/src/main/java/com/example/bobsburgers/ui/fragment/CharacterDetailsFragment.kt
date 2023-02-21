@@ -7,17 +7,19 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.ViewModelProvider
 import com.example.bobsburgers.R
-import com.example.bobsburgers.data.BobsBurgersRepository
+import com.example.bobsburgers.ui.viewmodel.CharacterDetailsViewModel
+import com.example.bobsburgers.ui.viewmodel.ViewModelFactory
 import dagger.android.support.AndroidSupportInjection
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 class CharacterDetailsFragment : Fragment() {
 
-    @Inject lateinit var repository: BobsBurgersRepository
+    @Inject lateinit var viewModelFactory: ViewModelFactory
+    private val viewModel by lazy {
+        ViewModelProvider(this, viewModelFactory)[CharacterDetailsViewModel::class.java]
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -25,8 +27,9 @@ class CharacterDetailsFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
 
-        CoroutineScope(Dispatchers.IO).launch {
-            Log.d("Network_Request", repository.getCharacterById("7").body().toString())
+        viewModel.getCharacterById("9")
+        viewModel.characterDetailsLiveData.observe(viewLifecycleOwner) {
+            Log.d("Hello-Dagger", it.toString())
         }
 
         return layoutInflater.inflate(R.layout.fragment_character_details, container, false)

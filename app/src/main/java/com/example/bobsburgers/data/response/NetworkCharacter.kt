@@ -9,12 +9,12 @@ data class NetworkCharacter(
     val image: String,
     val name: String,
     val occupation: String,
-    val relatives: List<Relative>,
+    val networkRelatives: List<NetworkRelative>,
     val url: String,
     val voicedBy: String,
     val wikiUrl: String
 ) {
-    data class Relative(
+    data class NetworkRelative(
         val _id: String,
         val name: String,
         val relationship: String,

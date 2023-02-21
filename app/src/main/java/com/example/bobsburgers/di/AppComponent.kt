@@ -1,19 +1,18 @@
 package com.example.bobsburgers.di
 
-import com.example.bobsburgers.BaseApplication
+import com.example.bobsburgers.BobsBurgerApplication
 import dagger.Component
-import dagger.Subcomponent
 import dagger.android.AndroidInjectionModule
 
 @Component(
     modules = [
         AndroidInjectionModule::class,
-        MainApplicationModule::class,
+        BobsBurgerActivityModule::class,
         NetworkModule::class,
         CharacterDetailsFragmentModule::class
     ]
 )
 interface AppComponent {
 
-    fun inject(baseApplication: BaseApplication): BaseApplication
+    fun inject(bobsBurgerApplication: BobsBurgerApplication): BobsBurgerApplication
 }

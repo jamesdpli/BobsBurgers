@@ -1,19 +1,15 @@
 package com.example.bobsburgers
 
 import android.os.Bundle
-import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
-import com.example.bobsburgers.data.BobsBurgersService
 import dagger.android.AndroidInjection
 import dagger.android.AndroidInjector
 import dagger.android.DispatchingAndroidInjector
 import dagger.android.HasAndroidInjector
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.launch
+import dagger.android.support.AndroidSupportInjection
 import javax.inject.Inject
 
-class MainActivity : AppCompatActivity(), HasAndroidInjector {
+class BobsBurgersActivity: AppCompatActivity(), HasAndroidInjector {
 
     @Inject lateinit var androidInjector: DispatchingAndroidInjector<Any>
 
